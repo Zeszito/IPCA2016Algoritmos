@@ -7,6 +7,10 @@
 //Fim de Funções a inicializar
 
 //Main
+int main(void)
+{
+
+}
 //Fim de main
 
 //Corpo das funções
