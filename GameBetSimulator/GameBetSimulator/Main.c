@@ -11,10 +11,10 @@
 void GeraCabecalho();
 void GeraMenu();
 void ExecutaEscolha();
+void  VerSaldo(); //Ver fluxograma //Escrevo ficheiro se nao houver.
 //float GeraCotas(); //O Miguel Vai dizer o que recebe 
 //void GeraProbalbilidadesEquipa(); //Esqueleto miguel, todos juntos.
 //void  PrintaMenu(); //O Moisés faz lindo menu, com asciiart.
-//void  VerSaldo(); //O Moisés faz este. //Ver fluxograma //Escrevo ficheiro se nao houver.
 //float AlteraSaldo(float valor);//Altera Saldo - Les ficheiro.
 //							  //Se houver ficheiro - Le valor  e somas; 
 //void  Jogar(); GeraCotas(); PrintResultado(); //AletraSaldo()
@@ -31,18 +31,9 @@ void ExecutaEscolha();
 //Main
 int main(void)
 {
-	char chose;
 	GeraCabecalho(); //Printa o topo
-	GeraMenu();	
-	//Escolhas
-	scanf("%c", &chose);
-	getchar(); //Para já serve	
-	while (!(chose == '1' || chose == '2' || chose == '3' || chose == '4' || chose == '5' || chose == '6'))
-	{
-		printf("escolha incorrecta, escolha novamente\n");
-		scanf("%c", &chose);
-		getchar();
-	}
+	GeraMenu();	//Gera o menu
+	ExecutaEscolha();//Excuta novas funçoes
 	
     
 }
@@ -52,6 +43,7 @@ int main(void)
 
 //Corpo das funções
 void GeraCabecalho() {
+	system("cls");
 	printf("						                     ___\ \n");
 	printf("						 o__        o__     |   |\\\n");
 	printf("						/|          /\\      |   |X\\\n");
@@ -75,7 +67,7 @@ void printaTopo() {
 	printf("%c", 187);
 	//segunda linha de cima
 	printf("%c", 201);// cantoSupEsquerdo = 201;
-	for (i = 0; i < 12; i++) { printf("%c", 205); }//linharecta = 221;  //35 primeiro bloco 
+	for (i = 0; i < 12; i++) { printf("%c", 205); }//linharecta = 221;  //12 segundo bloco 
 	printf("%c", 187);
 	printf("\n");
 }
@@ -199,7 +191,65 @@ void GeraMenu() {
 	printf("\n");
 	printaParteDeBaixo();
 	}
+void ExecutaEscolha() {
+	char chose;
+	chose = getchar();
+	while (!(chose == '1' || chose == '2' || chose == '3' || chose == '4' || chose == '5' || chose == '6'))
+	{
+		printf("escolha incorrecta, escolha novamente\n");
+
+		do {
+			chose = getchar();
+		} while (chose < '1' || chose > '6');
+	}
+
+	switch (chose)
+	{
+	case '1':
+		VerSaldo();
+		break;
+	case '2':
+		//Jogar();
+		printf("Excellent!\n");
+		break;
+	case '3':
+		//Listar();
+		printf("Excellent!\n");
+		break;
+	case '4':
+		//AlterarDefenicoes
+		printf("Excellent!\n");
+		break;
+	case '5':
+		//Gravar
+		printf("Excellent!\n");
+		break;
+	case '6':
+		//Sair
+		printf("Excellent!\n");
+		break;
+	default:
+		break;
+	}
+}
 //Fim Funcoes de Menu
+void VerSaldo(){
+
+	char escolha[4];
+	int i;
+	printf("Deseja adicionar saldo a sua conta?");
+	scanf("%s", escolha);
+	for (i = 0; i < 4; i++) {
+		escolha[i] = toupper(escolha[i]);
+	}	
+	if (strcmp(escolha, "SIM") == 0) { printf("Escolheu Sim\n") ; }//AdicionarSaldo();
+	else if (strcmp(escolha, "NAO") == 0) { GeraCabecalho(); GeraMenu(); ExecutaEscolha();}
+	else
+	{
+			printf("Essa Resposta esta errada :-). Por favor responda sim ou nao.\n");
+			VerSaldo();
+	}
+}
 //Fim Corpo das FunÇões
 
 
