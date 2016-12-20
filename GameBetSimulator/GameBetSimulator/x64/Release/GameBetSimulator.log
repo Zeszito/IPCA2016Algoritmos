@@ -1,10 +1,2 @@
-﻿  Main.c
-Main.c(47): warning C4129: ' ': unrecognized character escape sequence
-Main.c(243): warning C4013: 'toupper' undefined; assuming extern returning int
-  Generating code
-  2 of 15 functions (13.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  GameBetSimulator.vcxproj -> C:\Users\Moises\Desktop\PlacardC\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
-  GameBetSimulator.vcxproj -> C:\Users\Moises\Desktop\PlacardC\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)
+﻿  GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
+  GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)
