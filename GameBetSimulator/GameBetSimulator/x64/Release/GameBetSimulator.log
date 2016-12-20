@@ -1,2 +1,11 @@
-﻿  GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
-  GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)
+﻿  Main.c
+Main.c(52): warning C4129: ' ': unrecognized character escape sequence
+Main.c(249): warning C4013: 'toupper' undefined; assuming extern returning int
+Main.c(289): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  2 of 17 functions (11.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GameBetSimulator.vcxproj -> C:\Users\André Rodrigues\Desktop\Algoritmos Projeto (Placard)\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
+  GameBetSimulator.vcxproj -> C:\Users\André Rodrigues\Desktop\Algoritmos Projeto (Placard)\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)
