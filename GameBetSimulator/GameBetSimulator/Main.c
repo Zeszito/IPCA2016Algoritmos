@@ -12,12 +12,15 @@ void GeraCabecalho();
 void GeraMenu();
 void ExecutaEscolha();
 void VerSaldo(); //Ver fluxograma //Escrevo ficheiro se nao houver.
-void RelogioPrimeiraParte();
+void RelogioPrimeiraParte();/*Relogio de jogo*/
 void RelogioSegundaParte();
 void CriaFicheiroJogos();/*Funçao para criar ficheiro txt com o jogos que vai ser lido pela funçao gera probabilidades*/
-float GeraProbalbilidadesEquipa(); /*Esta funçao ainda tem que ler estas probabilidades do ficheiro txt, que vamos criar com as probabilidades pre-exitentes e depois com o update dado pelo programa cada vez que este correr.*/
-float GeraCotasFracionais();/*Funçao que recebe as probabilidades de cada resultado e retorna uma cota fractional para ser recebida pela funcao geredora de cotas decimais*/
-float GeraCotasdecimais(); /*Funcao que gera as cotas decimais*/
+float GeraProbalbilidadesEquipa1V(float vitoriasequipa1, float derrotasequipa2); /*Estas funçoes vao ler estas probabilidades do ficheiro txt, que vamos criar com as probabilidades pre-exitentes e depois com o update dado pelo programa cada vez que este correr.*/
+float GeraProbalbilidadesEquipaE(float empatesequipa1, float empatesequipa2);
+float GeraProbalbilidadesEquipa2V(float derrotasequipa1, float vitoriasequipa2);
+float GeraCotasEquipa1V(float probabilidadeequipa1V);/*Gera as cotas para serem feitas as apostas*/
+float GeraCotasEmpate(float  probabilidadeequipaE);
+float GeraCotasEquipa2V(float probabilidadeequipa2V);
 float AdicionarSaldo(float SaldoIntroduzido);
 //void  PrintaMenu(); //O Moisés faz lindo menu, com asciiart.
 //float AlteraSaldo(float valor);//Altera Saldo - Les ficheiro.
@@ -39,7 +42,7 @@ int main(void)
 	GeraCabecalho(); //Printa o topo
 	GeraMenu();	//Gera o menu
 	ExecutaEscolha();//Excuta novas funçoes
-	
+	RelogioPrimeiraParte();
     
 }
 
@@ -298,103 +301,104 @@ float AdicionarSaldo(float SaldoIntroduzido)
 
 
 
-//float GeraProbalbilidadesEquipa(vitoriasequipa1, empatesequipa1, derrotasequipa1,
-//	vitoriasequipa2, empatesequipa2, derrotasequipa2)
-//{
-//	float probabilidadeequipa1V, probabilidadeequipa1E, probabilidadeequipa1D,
-//		probabilidadeequipa2V, probabilidadeequipa2E, probabilidadeequipa2D,
-//		vitoriasequipa1, empatesequipa1, derrotasequipa1,
-//		vitoriasequipa2, empatesequipa2, derrotasequipa2;
-//	probabilidadeequipa1V = (vitoriasequipa1 + derrotasequipa2) / 2.0;
-//	probabilidadeequipa1E = (empatesequipa1 + empatesequipa2) / 2.0;
-//	probabilidadeequipa1D = (derrotasequipa1 + vitoriasequipa2) / 2.0;
-//	probabilidadeequipa2V = (vitoriasequipa2 + derrotasequipa1) / 2.0;
-//	probabilidadeequipa2E = (empatesequipa2 + empatesequipa1) / 2.0;
-//	probabilidadeequipa2D = (derrotasequipa2 + vitoriasequipa1) / 2.0;
-//
-//	return probabilidadeequipa1V, probabilidadeequipa1E, probabilidadeequipa1D,
-//		probabilidadeequipa2V, probabilidadeequipa2E, probabilidadeequipa2D;
-//
-//}
-//float GeraCotasFracionais(probabilidadeequipa1V, probabilidadeequipa1E, probabilidadeequipa1D,
-//	probabilidadeequipa2V, probabilidadeequipa2E, probabilidadeequipa2D)
-//{
-//	float apostafracionalequipa1V, apostafracionalequipa1E, apostafracionalequipa1D,
-//			apostafracionalequipa2V, apostafracionalequipa2E, apostafracionalequipa2D,
-//				probabilidadeequipa1V, probabilidadeequipa1E, probabilidadeequipa1D,
-//				probabilidadeequipa2V, probabilidadeequipa2E, probabilidadeequipa2D,
-//					retornofractional;
-//	retornofractional = 1;
-//	apostafracionalequipa1V = (retornofractional*(1 - probabilidadeequipa1V)) / (probabilidadeequipa1V);
-//	apostafracionalequipa1E = (retornofractional*(1 - probabilidadeequipa1E)) / (probabilidadeequipa1E);
-//	apostafracionalequipa1D = (retornofractional*(1 - probabilidadeequipa1D)) / (probabilidadeequipa1D);
-//	apostafracionalequipa2V = (retornofractional*(1 - probabilidadeequipa2V)) / (probabilidadeequipa2V);
-//	apostafracionalequipa2E = (retornofractional*(1 - probabilidadeequipa2E)) / (probabilidadeequipa2E);
-//	apostafracionalequipa2D = (retornofractional*(1 - probabilidadeequipa2D)) / (probabilidadeequipa2D);
-//	
-//	return apostafracionalequipa1V, apostafracionalequipa1E, apostafracionalequipa1D,
-//		apostafracionalequipa2V, apostafracionalequipa2E, apostafracionalequipa2D;
-//}
-//
-//float GeraCotasDecimais(apostafracionalequipa1V, apostafracionalequipa1E, apostafracionalequipa1D,
-//	apostafracionalequipa2V, apostafracionalequipa2E, apostafracionalequipa2D)
-//{
-//	float cotaequipa1V, cotaequipa1E, cotaequipa1D,
-//			cotaequipa2V, cotaequipa2E, cotaequipa2D,
-//				apostafracionalequipa1V, apostafracionalequipa1E, apostafracionalequipa1D,
-//				apostafracionalequipa2V, apostafracionalequipa2E, apostafracionalequipa2D;
-//				
-//	cotaequipa1V = apostafracionalequipa1V + 1;
-//	cotaequipa1E = apostafracionalequipa1E + 1;
-//	cotaequipa1D = apostafracionalequipa1D + 1;
-//	cotaequipa2V = apostafracionalequipa2V + 1;
-//	cotaequipa2E = apostafracionalequipa2E + 1;
-//	cotaequipa2D = apostafracionalequipa2D + 1;
-//
-//	return cotaequipa1V, cotaequipa1E, cotaequipa1D,
-//		cotaequipa2V, cotaequipa2E, cotaequipa2D;
-//	
-//}
-//void RelogioPrimeiraParte()
-//{
-//	int min = 0, seg = 0;
-//	while (min<45)
-//	{
-//
-//		if (seg>59)
-//		{
-//			min = min + 1; seg = 0;
-//		}
-//
-//		Sleep(1000);
-//		seg = seg + 1;
-//		system("cls");
-//
-//		printf("Primeira Parte:");
-//		printf("[Min %d:Seg %d]", min, seg);
-//	}
-//	printf("Fim da Primeira Parte!\n Resultado ao intervalo:");
-//}
-//void RelogioSegundaParte()
-//{
-//	int min = 45, seg = 0;
-//	while (min<90)
-//	{
-//
-//		if (seg>59)
-//		{
-//			min = min + 1; seg = 0;
-//		}
-//
-//		Sleep(1000);
-//		seg = seg + 1;
-//		system("cls");
-//
-//		printf("Segunda Parte:");
-//		printf("[Min %d:Seg %d]", min, seg);
-//	}
-//	printf("Fim do Jogo!\n Resultado Final:");
-//}
+float GeraProbalbilidadesEquipa1V(float vitoriasequipa1, float derrotasequipa2)
+{
+	float probabilidadeequipa1V;
+
+	probabilidadeequipa1V = (vitoriasequipa1 + derrotasequipa2) / 2.0;
+
+	return probabilidadeequipa1V;
+}
+float GeraProbalbilidadesEquipaE(float empatesequipa1, float empatesequipa2)
+{
+	float probabilidadeequipaE;
+
+	probabilidadeequipaE = (empatesequipa1 + empatesequipa2) / 2.0;
+
+	return  probabilidadeequipaE;
+}
+float GeraProbalbilidadesEquipa2V(float derrotasequipa1, float vitoriasequipa2)
+{
+	float probabilidadeequipa2V;
+
+	probabilidadeequipa2V = (vitoriasequipa2 + derrotasequipa1) / 2.0;
+
+	return	probabilidadeequipa2V;
+}
+
+
+float GeraCotasEquipa1V(float probabilidadeequipa1V)
+{
+	float apostafracionalequipa1V, cotaequipa1V,
+		retornofractional;
+
+	retornofractional = 1;
+	apostafracionalequipa1V = (retornofractional*(1 - probabilidadeequipa1V)) / (probabilidadeequipa1V);
+	cotaequipa1V = apostafracionalequipa1V + 1;
+	return cotaequipa1V;
+}
+float GeraCotasEmpate(float  probabilidadeequipaE)
+{
+	float  apostafracionalequipaE, cotaequipaE,
+		retornofractional;
+
+	retornofractional = 1;
+	apostafracionalequipaE = (retornofractional*(1 - probabilidadeequipaE)) / (probabilidadeequipaE);
+	cotaequipaE = apostafracionalequipaE + 1;
+	return cotaequipaE;
+}
+float GeraCotasEquipa2V(float probabilidadeequipa2V)
+{
+	float  apostafracionalequipa2V, cotaequipa2V,
+		retornofractional;
+
+	retornofractional = 1;
+	apostafracionalequipa2V = (retornofractional*(1 - probabilidadeequipa2V)) / (probabilidadeequipa2V);
+	cotaequipa2V = apostafracionalequipa2V + 1;
+	return cotaequipa2V;
+}
+
+
+void RelogioPrimeiraParte()
+{
+	int min = 0, seg = 0;
+	while (min<45)
+	{
+
+		if (seg>59)
+		{
+			min = min + 1; seg = 0;
+		}
+
+		Sleep(1000);
+		seg = seg + 1;
+		system("cls");
+
+		printf("Primeira Parte:");
+		printf("[Min %d:Seg %d]", min, seg);
+	}
+	printf("Fim da Primeira Parte!\n Resultado ao intervalo:");
+}
+void RelogioSegundaParte()
+{
+	int min = 45, seg = 0;
+	while (min<90)
+	{
+
+		if (seg>59)
+		{
+			min = min + 1; seg = 0;
+		}
+
+		Sleep(1000);
+		seg = seg + 1;
+		system("cls");
+
+		printf("Segunda Parte:");
+		printf("[Min %d:Seg %d]", min, seg);
+	}
+	printf("Fim do Jogo!\n Resultado Final:");
+}
 //Fim Corpo das FunÇões
 
 
