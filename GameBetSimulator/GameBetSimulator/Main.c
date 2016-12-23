@@ -42,7 +42,7 @@ int main(void)
 	GeraCabecalho(); //Printa o topo
 	GeraMenu();	//Gera o menu
 	ExecutaEscolha();//Excuta novas funçoes
-	RelogioPrimeiraParte();
+
     
 }
 
@@ -222,7 +222,1424 @@ void ExecutaEscolha() {
 		break;
 	case '3':
 		//Listar();
-		printf("Excellent!\n");
+	{
+		int Nmodalidade;
+		printf("Escolha modalidade em que pretende fazer a aposta ");
+		scanf("%d", &Nmodalidade);
+
+		switch (Nmodalidade)
+		{
+		case 1://Futebol
+		{
+			int NequipaFutebol;
+			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			scanf("%d", &NequipaFutebol);
+			switch (NequipaFutebol)
+			{
+			case 1://Sporting Clube de Portugal
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Sporting.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Sporting.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Sporting Clube De Portugal efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 2://Benfica
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Benfica.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Benfica.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+
+
+
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Benfica efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+
+				break;
+			}
+			case 3://Porto
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Porto.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Porto.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O FC Porto efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 4://Braga
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Braga.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Braga.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Braga efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 5://Real Madrid FC
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("RealMadrid.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("RealMadrid.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Real Madrid FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 6://Barcelona FC
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Barcelona.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Barcelona.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Barcelona FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 7://Atletico de Madrid
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("AtleticoMadrid.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("AtleticoMadrid.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Atletico de Madrid efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 8://Sevilha FC
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Sevilha.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Sevilha.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Sevilha FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 9://Bayern Munchen
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Bayern.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Bayern.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Bayern Munchen efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 10://Borussia de Dortmund
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Dortmund.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Dortmund.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Borussia de Dortmund efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+
+			}
+			case 11://Wolfsburg
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Wolfsburg.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Wolfsburg.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Wolfsburg efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 12://FC Koln
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Koln.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Koln.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O FC Koln efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 13://Manchester United
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("ManchesterUnited.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("ManchesterUnited.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Manchester United FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 14://Manchester City
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("ManchesterCity.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("ManchesterCity.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Manchester City FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 15://Arsenal FC
+			{
+
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Arsenal.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Arsenal.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Arsenal FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+
+			}
+			case 16://Chelsea FC
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Chelsea.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Chelsea.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O Chelsea FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 17://Juventus FC
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Juventus.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Juventus.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("A Juventus FC efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 18://SSC Napoli
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Napoli.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Napoli.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("A SSC Napoli  efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 19://Internaziole
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Inter.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Inter.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O FC Internazionale Milano efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+			case 20://AC MIlan
+			{
+				int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+				char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+				float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+				FILE *FicheiroDadosEquipas;
+				FicheiroDadosEquipas = fopen("Milan.txt", "r");
+				if (FicheiroDadosEquipas == NULL)
+				{
+					FicheiroDadosEquipas = fopen("Milan.txt", "w");
+					printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+					scanf("%s", lista);
+					fprintf(FicheiroDadosEquipas, "%s", lista);
+					fclose(FicheiroDadosEquipas);
+				}
+				else
+				{
+					while ((x = getc(FicheiroDadosEquipas)) != EOF)
+					{
+						lista[i] = x;
+
+						if (lista[i] == 'J')
+						{
+							while ((y = getc(FicheiroDadosEquipas)) != '_')
+							{
+								jogos[j] = y;
+								j++;
+							}
+						}
+						if (lista[i] == 'V')
+						{
+							while ((z = getc(FicheiroDadosEquipas)) != '_')
+							{
+								vitorias[l] = z;
+								l++;
+							}
+						}
+						if (lista[i] == 'E')
+						{
+							while ((w = getc(FicheiroDadosEquipas)) != '_')
+							{
+								empates[p] = w;
+								p++;
+							}
+						}
+						if (lista[i] == 'D')
+						{
+							while ((r = getc(FicheiroDadosEquipas)) != '_')
+							{
+								derrotas[h] = r;
+								h++;
+							}
+						}
+						i++;
+					}
+
+				}
+
+
+				Njogos = atof(jogos);
+				Nvitorias = atof(vitorias);
+				Nempates = atof(empates);
+				Nderrotas = atof(derrotas);
+
+				printf("O AC Milan efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
+				fclose(FicheiroDadosEquipas);
+				break;
+			}
+
+			default:
+			{
+				break;
+			}
+			}
+			break;
+		}
+		case 2://Futsal
+		{
+			int NequipaFutsal;
+			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			scanf("%d", &NequipaFutsal);
+			break;
+		}
+		case 3://Basquetbol
+		{
+			int NequipaBasquetbol;
+			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			scanf("%d", &NequipaBasquetbol);
+			break;
+		}
+		case 4://Futebol Americano
+		{
+			int NequipaFamericano;
+			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			scanf("%d", &NequipaFamericano);
+			break;
+		}
+		default:
+			printf("ERRO!\nNumero selecionado nao e valido!\nVolte a introduzir um numero valido: ");
+			scanf("%d", &Nmodalidade);
+
+			break;
+		}
+		
+	}
 		break;
 	case '4':
 		//AlterarDefenicoes
