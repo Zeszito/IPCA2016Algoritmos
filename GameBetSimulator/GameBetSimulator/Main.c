@@ -7,6 +7,7 @@
 
 
 
+
 ////Funções a inicializar
 void GeraCabecalho();
 void GeraMenu();
@@ -22,10 +23,11 @@ float GeraCotasEquipa1V(float probabilidadeequipa1V);/*Gera as cotas para serem 
 float GeraCotasEmpate(float  probabilidadeequipaE);
 float GeraCotasEquipa2V(float probabilidadeequipa2V);
 float AdicionarSaldo(float SaldoIntroduzido);
+void  Jogar(float probabilidadeequipa1V, float probabilidadeequipa2V);
 //void  PrintaMenu(); //O Moisés faz lindo menu, com asciiart.
 //float AlteraSaldo(float valor);//Altera Saldo - Les ficheiro.
 //							  //Se houver ficheiro - Le valor  e somas; 
-//void  Jogar(); GeraCotas(); PrintResultado(); //AletraSaldo()
+
 //void  Listar(); //Le o ficheiro e printa modalidade, jogos e resultados
 //void  AlterarDefenicoes();
 //void  Gravar();
@@ -42,7 +44,7 @@ int main(void)
 	GeraCabecalho(); //Printa o topo
 	GeraMenu();	//Gera o menu
 	ExecutaEscolha();//Excuta novas funçoes
-
+	srand(time(NULL));
     
 }
 
@@ -1818,6 +1820,37 @@ void RelogioSegundaParte()
 }
 //Fim Corpo das FunÇões
 
+void jogar(float probabilidadeequipa1V, float probabilidadeequipa2V){
+	int quemRemata = 0; //se par equipa se impar equipa
+	int goloEquipa1;
+	int goloEuipa2;
+	int i;
 
+	for(i=0;i>6;i++){
+	if (quemRemata % 2 == 0) {
+		if (probabilidadeequipa1V * 10 > rand() % 11) {
+			goloEquipa1++;
+			quemRemata++;
+			//switch quem remata faz uma string de 10 foi golo
+		}
+		else {
+			quemRemata++;
+			//switch quem remata faz uma string de 10 falhou
+		}
+	}
+	else
+	{
+		if (probabilidadeequipa2V * 10 > rand() % 11) {
+			goloEquipa1++;
+			quemRemata++;
+			//switch quem remata faz uma string de 10 foi golo
+		}
+		else {
+			quemRemata++;
+			//switch quem remata faz uma string de 10 falhou
+		}
+	}
+	}
+}
 
 
