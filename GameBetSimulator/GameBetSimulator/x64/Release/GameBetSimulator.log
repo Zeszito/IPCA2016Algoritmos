@@ -88,18 +88,18 @@ Main.c(1687): warning C4244: '=': conversion from 'double' to 'float', possible 
 Main.c(1688): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(1689): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(1690): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1759): warning C4013: 'toupper' undefined; assuming extern returning int
-Main.c(1799): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1817): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1826): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1836): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1859): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1885): warning C4013: 'Sleep' undefined; assuming extern returning int
-Main.c(1919): warning C4101: 'goloEuipa2': unreferenced local variable
+Main.c(1762): warning C4013: 'toupper' undefined; assuming extern returning int
+Main.c(1802): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1820): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1829): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1839): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1862): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1888): warning C4013: 'Sleep' undefined; assuming extern returning int
+Main.c(1922): warning C4101: 'goloEuipa2': unreferenced local variable
   Generating code
-  9 of 24 functions (37.5%) were compiled, the rest were copied from previous compilation.
+  4 of 24 functions (16.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\Ipca2016TrabPratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
   GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\Ipca2016TrabPratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)

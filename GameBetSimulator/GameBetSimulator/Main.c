@@ -1705,6 +1705,7 @@ void ExecutaEscolha() {
 		{
 			int NequipaFutsal;
 			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			printf("\nSporting - 1 Inter Movistar - 2 FK Dynamo Moskva - 3\nBenfica - 4 Barcelona - 5 Kairat Alma-Ata - 6\n");
 			scanf("%d", &NequipaFutsal);
 			break;
 		}
@@ -1712,6 +1713,7 @@ void ExecutaEscolha() {
 		{
 			int NequipaBasquetbol;
 			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			printf("\nMiami Heat - 1 LA Lakers- 2 Detroit Pistons - 3\nChicago Bulls - 4 Boston Celtics - 5 San Antonio Spurs - 6\n ");
 			scanf("%d", &NequipaBasquetbol);
 			break;
 		}
@@ -1719,6 +1721,7 @@ void ExecutaEscolha() {
 		{
 			int NequipaFamericano;
 			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			printf("\nNew England Patriots - 1 New York Giants - 2 Cleveland Browns - 3\nChicago Bears - 4 Denver Broncos - 5  Seattle Seahawks- 6\n");
 			scanf("%d", &NequipaFamericano);
 			break;
 		}
