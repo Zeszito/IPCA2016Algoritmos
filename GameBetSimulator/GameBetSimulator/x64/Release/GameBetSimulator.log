@@ -1,95 +1,105 @@
 ﻿  Main.c
-Main.c(55): warning C4129: ' ': unrecognized character escape sequence
-Main.c(298): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(299): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(300): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(46): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+Main.c(56): warning C4129: ' ': unrecognized character escape sequence
 Main.c(301): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(369): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(370): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(371): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(372): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(438): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(439): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(440): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(441): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(506): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(507): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(508): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(509): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(574): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(575): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(576): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(577): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(642): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(643): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(644): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(645): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(710): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(711): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(712): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(713): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(778): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(779): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(780): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(781): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(846): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(847): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(848): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(849): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(914): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(915): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(916): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(917): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(983): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(984): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(985): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(986): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1051): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1052): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1053): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1054): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1119): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1120): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1121): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1122): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1187): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1188): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1189): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1190): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1256): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1257): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1258): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1259): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1325): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1326): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1327): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1328): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1393): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1394): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1395): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1396): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1461): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1462): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1463): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1464): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1529): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1530): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1531): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1532): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1597): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1598): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1599): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1600): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1669): warning C4013: 'toupper' undefined; assuming extern returning int
-Main.c(1709): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1725): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1733): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1741): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(1790): warning C4013: 'Sleep' undefined; assuming extern returning int
+Main.c(302): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(303): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(304): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(374): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Main.c(375): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Main.c(376): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Main.c(377): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Main.c(379): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+Main.c(380): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+Main.c(381): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+Main.c(459): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(460): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(461): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(462): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(528): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(529): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(530): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(531): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(596): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(597): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(598): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(599): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(664): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(665): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(666): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(667): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(732): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(733): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(734): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(735): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(800): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(801): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(802): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(803): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(868): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(869): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(870): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(871): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(936): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(937): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(938): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(939): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1004): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1005): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1006): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1007): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1073): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1074): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1075): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1076): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1141): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1143): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1144): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1209): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1210): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1211): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1212): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1277): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1278): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1279): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1280): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1346): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1347): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1348): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1349): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1415): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1416): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1417): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1418): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1483): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1484): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1485): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1486): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1552): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1553): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1554): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1619): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1620): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1621): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1622): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1687): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1688): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1689): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1690): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1759): warning C4013: 'toupper' undefined; assuming extern returning int
+Main.c(1799): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1817): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1826): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1836): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1859): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(1885): warning C4013: 'Sleep' undefined; assuming extern returning int
+Main.c(1919): warning C4101: 'goloEuipa2': unreferenced local variable
   Generating code
-  3 of 17 functions (17.6%) were compiled, the rest were copied from previous compilation.
+  9 of 24 functions (37.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\Ipca2016TrabPratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
   GameBetSimulator.vcxproj -> C:\Users\Ferna\Desktop\EDJD\1º Ano\1ºSemestre\AED\Trabalho pratico\Ipca2016TrabPratico\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)

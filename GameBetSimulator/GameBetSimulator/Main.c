@@ -15,11 +15,10 @@ void ExecutaEscolha();
 void VerSaldo(); //Ver fluxograma //Escrevo ficheiro se nao houver.
 void RelogioPrimeiraParte();/*Relogio de jogo*/
 void RelogioSegundaParte();
-void CriaFicheiroJogos();/*Funçao para criar ficheiro txt com o jogos que vai ser lido pela funçao gera probabilidades*/
-float GeraProbalbilidadesEquipa1V(float vitoriasequipa1, float derrotasequipa2); /*Estas funçoes vao ler estas probabilidades do ficheiro txt, que vamos criar com as probabilidades pre-exitentes e depois com o update dado pelo programa cada vez que este correr.*/
-float GeraProbalbilidadesEquipaE(float empatesequipa1, float empatesequipa2);
-float GeraProbalbilidadesEquipa2V(float derrotasequipa1, float vitoriasequipa2);
-float GeraCotasEquipa1V(float probabilidadeequipa1V);/*Gera as cotas para serem feitas as apostas*/
+float GeraProbalbilidadesEquipa1V(int vitoriasequipa1, int jogosequipa1, int derrotasequipa2, int jogosequipa2);
+float GeraProbalbilidadesEquipaE(int empatesequipa1, int jogosequipa1, int empatesequipa2, int jogosequipa2);
+float GeraProbalbilidadesEquipa2V(int derrotasequipa1, int jogosequipa1, int vitoriasequipa2, int jogosequipa2);
+float GeraCotasEquipa1V(float probabilidadeequipa1V);
 float GeraCotasEmpate(float  probabilidadeequipaE);
 float GeraCotasEquipa2V(float probabilidadeequipa2V);
 float AdicionarSaldo(float SaldoIntroduzido);
@@ -226,6 +225,7 @@ void ExecutaEscolha() {
 		//Listar();
 	{
 		int Nmodalidade;
+		printf("\nFutebol - 1\nFutsal - 2\nBasquetbol - 3\nFutebolAmericano - 4\n");
 		printf("Escolha modalidade em que pretende fazer a aposta ");
 		scanf("%d", &Nmodalidade);
 
@@ -235,6 +235,7 @@ void ExecutaEscolha() {
 		{
 			int NequipaFutebol;
 			printf("Escolha a equipa que pretende fazer a sua aposta: ");
+			printf("\nSporting - 1 Real Madrid - 5 Bayern - 9 United - 13 Juventus - 17 \nBenfica - 2 Barcelona - 6 Dortmund - 10 City - 14 Napoles - 18  \nPorto - 3 Atletico - 7 Wolfsburg - 11  Arsenal - 15 Inter - 19\nBraga - 4 Sevilha - 8 Colon- 12 Chelsea - 16 Milan - 20\n");
 			scanf("%d", &NequipaFutebol);
 			switch (NequipaFutebol)
 			{
@@ -304,7 +305,94 @@ void ExecutaEscolha() {
 
 				printf("O Sporting Clube De Portugal efectuou %0.2f jogos, dos quais %0.2f sao vitorias, %0.2f sao empates e %0.2f sao derrotas. \n", Njogos, Nvitorias, Nempates, Nderrotas);
 				fclose(FicheiroDadosEquipas);
-				break;
+
+				int NequipaFutebol2;
+				printf("Escolha a equipa adversaria: ");
+				scanf("%d", &NequipaFutebol2);
+				if (NequipaFutebol2 == 2)
+				{
+					char equipa[100] = "Benfica.txt";
+					char nome[100] = "SL Benfica";
+
+					int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+					char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+					int Njogos2 = 0, Nvitorias2 = 0, Nempates2 = 0, Nderrotas2 = 0;
+					FILE *FicheiroDadosEquipas;
+					FicheiroDadosEquipas = fopen(equipa, "r");
+					if (FicheiroDadosEquipas == NULL)
+					{
+						FicheiroDadosEquipas = fopen(equipa, "w");
+						printf("Introduza os dados da equipa sobre a qual pretende fazer a aposta: ");
+						scanf("%s", lista);
+						fprintf(FicheiroDadosEquipas, "%s", lista);
+						fclose(FicheiroDadosEquipas);
+					}
+					else
+					{
+						while ((x = getc(FicheiroDadosEquipas)) != EOF)
+						{
+							lista[i] = x;
+
+							if (lista[i] == 'J')
+							{
+								while ((y = getc(FicheiroDadosEquipas)) != '_')
+								{
+									jogos[j] = y;
+									j++;
+								}
+							}
+							if (lista[i] == 'V')
+							{
+								while ((z = getc(FicheiroDadosEquipas)) != '_')
+								{
+									vitorias[l] = z;
+									l++;
+								}
+							}
+							if (lista[i] == 'E')
+							{
+								while ((w = getc(FicheiroDadosEquipas)) != '_')
+								{
+									empates[p] = w;
+									p++;
+								}
+							}
+							if (lista[i] == 'D')
+							{
+								while ((r = getc(FicheiroDadosEquipas)) != '_')
+								{
+									derrotas[h] = r;
+									h++;
+								}
+							}
+							i++;
+						}
+
+					}
+
+
+					Njogos2 = atof(jogos);
+					Nvitorias2 = atof(vitorias);
+					Nempates2 = atof(empates);
+					Nderrotas2 = atof(derrotas);
+					
+					float probequipa1 = GeraProbalbilidadesEquipa1V(Nvitorias, Njogos, Nderrotas, Njogos2);
+					float probempate = GeraProbalbilidadesEquipaE(Nempates, Njogos, Nempates2, Njogos2);
+					float probequipa2 = GeraProbalbilidadesEquipa2V(Nderrotas, Njogos, Nvitorias2, Njogos2);
+					GeraCotasEquipa1V(probequipa1);
+					GeraCotasEmpate(probempate);
+					GeraCotasEquipa2V(probequipa2);
+
+					printf("O %s efectuou %d jogos, dos quais %d sao vitorias, %d sao empates e %d sao derrotas. \n", nome, Njogos2, Nvitorias2, Nempates2, Nderrotas2);
+					fclose(FicheiroDadosEquipas);
+
+			
+					printf("%0.2f\n", GeraCotasEquipa1V(probequipa1));
+					printf("%0.2f\n", GeraCotasEmpate(probempate));
+					printf("%0.2f\n", GeraCotasEquipa2V(probequipa2));
+					break;
+				
+				}
 			}
 			case 2://Benfica
 			{
@@ -1720,29 +1808,34 @@ float AdicionarSaldo(float SaldoIntroduzido)
 
 
 
-float GeraProbalbilidadesEquipa1V(float vitoriasequipa1, float derrotasequipa2)
+float GeraProbalbilidadesEquipa1V(int vitoriasequipa1, int jogosequipa1, int derrotasequipa2, int jogosequipa2)
 {
-	float probabilidadeequipa1V;
+	float probabilidadeequipa1V, probVequipa1, probDequipa2;
+	probVequipa1 = ((float)vitoriasequipa1 / (float)jogosequipa1);
+	probDequipa2 = ((float)derrotasequipa2 / (float)jogosequipa2);
 
-	probabilidadeequipa1V = (vitoriasequipa1 + derrotasequipa2) / 2.0;
+	probabilidadeequipa1V =(probVequipa1+probDequipa2)/ 2.0;
 
 	return probabilidadeequipa1V;
 }
-float GeraProbalbilidadesEquipaE(float empatesequipa1, float empatesequipa2)
+float GeraProbalbilidadesEquipaE(int empatesequipa1, int jogosequipa1, int empatesequipa2,int jogosequipa2)
 {
-	float probabilidadeequipaE;
-
-	probabilidadeequipaE = (empatesequipa1 + empatesequipa2) / 2.0;
+	float probabilidadeequipaE, probE1, probE2;
+	probE1 = ((float)empatesequipa1 /(float) jogosequipa1);
+	probE2 = ((float)empatesequipa2 / (float)jogosequipa2);
+	probabilidadeequipaE = (probE1+probE2) / 2.0;
 
 	return  probabilidadeequipaE;
 }
-float GeraProbalbilidadesEquipa2V(float derrotasequipa1, float vitoriasequipa2)
+float GeraProbalbilidadesEquipa2V(int derrotasequipa1, int jogosequipa1, int vitoriasequipa2, int jogosequipa2)
 {
-	float probabilidadeequipa2V;
+	float probabilidadeequipa1V, probVequipa2, probDequipa1;
+	probDequipa1 = ((float)derrotasequipa1 / (float)jogosequipa1);
+	probVequipa2 = ((float)vitoriasequipa2 / (float)jogosequipa2);
 
-	probabilidadeequipa2V = (vitoriasequipa2 + derrotasequipa1) / 2.0;
+	probabilidadeequipa1V = (probVequipa2 + probDequipa1) / 2.0;
 
-	return	probabilidadeequipa2V;
+	return probabilidadeequipa1V;
 }
 
 
@@ -1763,7 +1856,7 @@ float GeraCotasEmpate(float  probabilidadeequipaE)
 
 	retornofractional = 1;
 	apostafracionalequipaE = (retornofractional*(1 - probabilidadeequipaE)) / (probabilidadeequipaE);
-	cotaequipaE = apostafracionalequipaE + 1;
+	cotaequipaE = (apostafracionalequipaE + 1)/2.0;
 	return cotaequipaE;
 }
 float GeraCotasEquipa2V(float probabilidadeequipa2V)
@@ -1852,5 +1945,4 @@ void jogar(float probabilidadeequipa1V, float probabilidadeequipa2V){
 	}
 	}
 }
-
 
