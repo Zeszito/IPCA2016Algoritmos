@@ -1,30 +1,35 @@
 ﻿  Main.c
-Main.c(45): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-Main.c(59): warning C4129: ' ': unrecognized character escape sequence
-Main.c(264): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(46): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+Main.c(60): warning C4129: ' ': unrecognized character escape sequence
 Main.c(265): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(266): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(267): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(447): warning C4087: 'getchar': declared with 'void' parameter list
-Main.c(486): warning C4013: 'toupper' undefined; assuming extern returning int
-Main.c(526): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(542): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(561): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(583): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(609): warning C4013: 'Sleep' undefined; assuming extern returning int
-Main.c(643): warning C4101: 'goloEuipa2': unreferenced local variable
-Main.c(644): warning C4101: 'i': unreferenced local variable
-Main.c(642): warning C4101: 'goloEquipa1': unreferenced local variable
-Main.c(699): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
-Main.c(701): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
-Main.c(701): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
-Main.c(721): warning C4013: 'close' undefined; assuming extern returning int
-Main.c(723): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
-Main.c(725): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
-Main.c(725): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+Main.c(268): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(448): warning C4087: 'getchar': declared with 'void' parameter list
+Main.c(487): warning C4013: 'toupper' undefined; assuming extern returning int
+Main.c(527): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(543): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(552): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(562): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(584): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(610): warning C4013: 'Sleep' undefined; assuming extern returning int
+Main.c(644): warning C4101: 'goloEuipa2': unreferenced local variable
+Main.c(645): warning C4101: 'i': unreferenced local variable
+Main.c(643): warning C4101: 'goloEquipa1': unreferenced local variable
+Main.c(700): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
+Main.c(702): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+Main.c(702): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+Main.c(722): warning C4013: 'close' undefined; assuming extern returning int
+Main.c(724): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
+Main.c(726): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+Main.c(726): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+Main.c(756): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+Main.c(756): warning C4024: 'atoi': different types for formal and actual parameter 1
+Main.c(759): warning C4047: 'function': 'const char *' differs in levels of indirection from 'int'
+Main.c(759): warning C4024: 'atoi': different types for formal and actual parameter 1
+Main.c(759): warning C4024: 'strcat': different types for formal and actual parameter 2
   Generating code
-  2 of 22 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
+  1 of 22 functions ( 4.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
