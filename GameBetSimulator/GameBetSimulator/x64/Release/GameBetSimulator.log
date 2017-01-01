@@ -1,24 +1,32 @@
 ﻿  Main.c
-Main.c(44): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-Main.c(58): warning C4129: ' ': unrecognized character escape sequence
-Main.c(263): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(45): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+Main.c(59): warning C4129: ' ': unrecognized character escape sequence
 Main.c(264): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(265): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(266): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(467): warning C4013: 'toupper' undefined; assuming extern returning int
-Main.c(507): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(523): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(532): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(267): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(447): warning C4087: 'getchar': declared with 'void' parameter list
+Main.c(486): warning C4013: 'toupper' undefined; assuming extern returning int
+Main.c(526): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Main.c(542): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(564): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Main.c(590): warning C4013: 'Sleep' undefined; assuming extern returning int
-Main.c(624): warning C4101: 'goloEuipa2': unreferenced local variable
-Main.c(625): warning C4101: 'i': unreferenced local variable
-Main.c(623): warning C4101: 'goloEquipa1': unreferenced local variable
+Main.c(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(561): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(583): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.c(609): warning C4013: 'Sleep' undefined; assuming extern returning int
+Main.c(643): warning C4101: 'goloEuipa2': unreferenced local variable
+Main.c(644): warning C4101: 'i': unreferenced local variable
+Main.c(642): warning C4101: 'goloEquipa1': unreferenced local variable
+Main.c(699): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
+Main.c(701): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+Main.c(701): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+Main.c(721): warning C4013: 'close' undefined; assuming extern returning int
+Main.c(723): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
+Main.c(725): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+Main.c(725): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
   Generating code
-  4 of 21 functions (19.0%) were compiled, the rest were copied from previous compilation.
+  2 of 22 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GameBetSimulator.vcxproj -> C:\Users\Moises\Desktop\PlacardC\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.exe
   GameBetSimulator.vcxproj -> C:\Users\Moises\Desktop\PlacardC\IPCA2016Algoritmos\GameBetSimulator\x64\Release\GameBetSimulator.pdb (Full PDB)

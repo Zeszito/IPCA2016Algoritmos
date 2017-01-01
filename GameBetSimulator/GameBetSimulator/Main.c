@@ -17,6 +17,8 @@ void VerSaldo(); //Ver fluxograma //Escrevo ficheiro se nao houver.
 void RelogioPrimeiraParte();/*Relogio de jogo*/
 void RelogioSegundaParte();
 void Listar();
+void CriarEquipa(char Desporto, char* nomeEquipa, int NJogos, int NVitorias, int NEmpates, int Gmarcados, int Gsofridos); //TEM ERROS
+void ListarEquipasPersonalisadas();
 float GeraProbalbilidadesEquipa1V(int vitoriasequipa1, int jogosequipa1, int derrotasequipa2, int jogosequipa2);
 float GeraProbalbilidadesEquipaE(int empatesequipa1, int jogosequipa1, int empatesequipa2, int jogosequipa2);
 float GeraProbalbilidadesEquipa2V(int derrotasequipa1, int jogosequipa1, int vitoriasequipa2, int jogosequipa2);
@@ -281,7 +283,7 @@ void Listar(){
 		{
 			int NequipaFutebol;
 			printf("Escolha a equipa que pretende fazer a sua aposta: ");
-			printf("\nSporting - 1 Real Madrid - 5 Bayern - 9 United - 13 Juventus - 17 \nBenfica - 2 Barcelona - 6 Dortmund - 10 City - 14 Napoles - 18  \nPorto - 3 Atletico - 7 Wolfsburg - 11  Arsenal - 15 Inter - 19\nBraga - 4 Sevilha - 8 Colon- 12 Chelsea - 16 Milan - 20\n");
+			printf("\nSporting - 1 \tReal Madrid - 5 \tBayern - 9 \tUnited - 13 \tJuventus - 17 \nBenfica - 2 \tBarcelona - 6 \tDortmund - 10 \tCity - 14 \tNapoles - 18  \nPorto - 3 \tAtletico - 7 \tWolfsburg - 11  \tArsenal - 15 \tInter - 19\nBraga - 4 \tSevilha - 8 \tColon- 12 \tChelsea - 16 \tMilan - 20\n");
 			scanf("%d", &NequipaFutebol);
 			switch (NequipaFutebol)
 			{
@@ -417,7 +419,9 @@ void Listar(){
 	}
 }
 void ExecutaEscolha() {
-	char chose;
+	char chose, desporto;
+	int Njogos, NGanhou, NEmpatou,NGMarcou,NGSofreu;
+	char nomeEquipa[10];
 	chose = getchar();
 	while (!(chose == '1' || chose == '2' || chose == '3' || chose == '4' || chose == '5' || chose == '6'))
 	{
@@ -440,6 +444,22 @@ void ExecutaEscolha() {
 		Listar();	
 		break;
 	case '4':
+		printf("introduza a modalidade F para Football");
+		getchar(&desporto); //ELE APANHA ME O ENTER!
+		printf("Nome da equipa");
+		scanf("%s", &nomeEquipa[0]);
+		printf("Quantos jogos jogou?");
+		scanf("%d", &Njogos);
+		printf("Quantos jogos Ganhou?");
+		scanf("%d", &NGanhou);
+		printf("Quantos jogos Empatou");
+		scanf("%d", &NEmpatou); //numero de ganho empate tem de ser menor que jgos
+		printf("Quantos golos marcou");
+		scanf("%d", &NGMarcou);
+		printf("Quantos golos sofreu");
+		scanf("%d", &NGSofreu);
+		//char Desporto, int nomeEquipa, int NJogos, int NVitorias, int NEmpates, int Gmarcados, int Gsofridos 
+		CriarEquipa(desporto,nomeEquipa,Njogos,NGanhou,NEmpatou,NGMarcou,NGSofreu);
 		//AlterarDefenicoes
 		printf("Excellent!\n");
 		break;
@@ -670,7 +690,87 @@ void Jogar(){
 	//Se ganhou AdicionarSaldo(valorApostado*Cota)
 	//Menu
 	}
-
+void CriarEquipa(char Desporto, char* nomeEquipa, int NJogos, int NVitorias, int NEmpates, int Gmarcados, int Gsofridos ) {
+	int nDerrotas = NJogos - NVitorias - NEmpates;
+	//int i = 0;
+	char* nomeFicheiro;
+	char* voltas;
+	char incremento;
+	FILE *fp1, *fp2;
+	if (Desporto = "F") {
+		fp2 = fopen("FotTrack.txt", "r");
+		while ((voltas = fgetc(fp2)) != EOF);
+		//i = atoi(voltas);		
+		nomeFicheiro = "F";
+		strcat(nomeFicheiro, voltas);
+		strcat(nomeFicheiro, ".txt");
+		fp1 = fopen(nomeFicheiro, "w");
+		//Escever NomeEquipa
+		//Escrever nJogos
+		//Escrever NVitorias
+		//Escrever NDerrotas
+		//Escrevrer NEmpates
+		//Escrever NDerrotas
+		//Escrever GolosMarcados
+		//EScrever GolosSofridos
+		fclose(fp1);
+		fclose(fp2);
+		fp2 = fopen("FotTrack.txt", "w");
+		while ((incremento = fgetc(fp2)) != EOF);
+		incremento = incremento + 1; //limite 9;
+		fprintf(fp2, "%c", incremento);
+		close(fp2);		
+	}
+	else if (Desporto = "B") {
+		fp2 = fopen("BasTrack.txt", "r");
+		while ((voltas = fgetc(fp2)) != EOF);
+		//i = atoi(voltas);		
+		nomeFicheiro = "F";
+		strcat(nomeFicheiro, voltas);
+		strcat(nomeFicheiro, ".txt");
+		fp1 = fopen(nomeFicheiro, "w");
+		//Escever NomeEquipa
+		//Escrever nJogos
+		//Escrever NVitorias
+		//Escrever NDerrotas
+		//Escrevrer NEmpates
+		//Escrever NDerrotas
+		//Escrever GolosMarcados
+		//EScrever GolosSofridos
+		fclose(fp1);
+		fclose(fp2);
+		fp2 = fopen("BasTrack.txt", "w");
+		while ((incremento = fgetc(fp2)) != EOF);
+		incremento = incremento + 1; //limite 9;
+		fprintf(fp2, "%c", incremento);
+		close(fp2);
+	}	
+	}
+void ListarEquipasPersonalisadas() {
+	FILE *Fp1, *Fp2;
+	int i, f=0;
+	char voltas;
+	char* nomeFicheiro;
+	Fp2 = fopen("FotTrack.txt", "r");
+	while ((voltas = fgetc(Fp2)) != EOF);
+	i = atoi(voltas);
+	for (f; f <= i; f++) {
+		nomeFicheiro = "F";
+		strcat(nomeFicheiro, atoi(f));
+		strcat(nomeFicheiro, ".txt");
+		Fp1 = fopen(nomeFicheiro, "r");
+		//Ler NomeEquipa
+		//LEr nJogos
+		//LEr NVitorias
+		//LEr NDerrotas
+		//LErNEmpates
+		//LEr NDerrotas
+		//LEr GolosMarcados
+		//LER GolosSofridos
+		fclose(Fp1);
+		fclose(Fp2);
+	}
+}
 /*Para mais tarde
 Njogos2 = atof(jogos);
 Nvitorias2 = atof(vitorias);
